@@ -1,5 +1,6 @@
 const Blog = require('../models/blog') 
 
+// create method for a single post
 exports.createNewBlog = async(req, res) => {
    try {
     const blogTitle = req.body.title;
@@ -20,9 +21,9 @@ exports.createNewBlog = async(req, res) => {
    } 
 }  
 
+// // for findMany method by id
 exports.getAllBlogs = async (req, res) => {
     try {
-        // const targetId = req.params.id; 
         const updatedBlog = await Blog.find({})
         res.status(200).json({message:"All blogs found successfully", blogs:updatedBlog})
     } catch (error) {
@@ -30,6 +31,7 @@ exports.getAllBlogs = async (req, res) => {
     }
 }
 
+// for findOne method by id
 exports.getABlogById = async (req, res) => {
     try {
         const filterId = req.params.id; 
@@ -40,6 +42,7 @@ exports.getABlogById = async (req, res) => {
     }
 }
 
+// for update method by id
 exports.updateABlogById = async (req, res) => {
     try {
         const updateId = req.params.id; 
@@ -53,6 +56,7 @@ exports.updateABlogById = async (req, res) => {
     }
 }
 
+// for delete method by id
 exports.deleteABlogById = async (req, res) => {
     try {
         const targetId = req.params.id; 
