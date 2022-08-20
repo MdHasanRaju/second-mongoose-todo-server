@@ -1,6 +1,6 @@
 const Blog = require('../models/blog') 
 
-// create method for a single post
+// create method for a single blog
 exports.createNewBlog = async(req, res) => {
    try {
     const blogTitle = req.body.title;
@@ -21,7 +21,7 @@ exports.createNewBlog = async(req, res) => {
    } 
 }  
 
-// // for findMany method by id
+// get method for all blogs
 exports.getAllBlogs = async (req, res) => {
     try {
         const updatedBlog = await Blog.find({})
@@ -31,7 +31,7 @@ exports.getAllBlogs = async (req, res) => {
     }
 }
 
-// for findOne method by id
+// get method for a single blog by id
 exports.getABlogById = async (req, res) => {
     try {
         const filterId = req.params.id; 
@@ -42,7 +42,7 @@ exports.getABlogById = async (req, res) => {
     }
 }
 
-// for update method by id
+// put method for a single blog by id
 exports.updateABlogById = async (req, res) => {
     try {
         const updateId = req.params.id; 
@@ -56,7 +56,7 @@ exports.updateABlogById = async (req, res) => {
     }
 }
 
-// for delete method by id
+// delete method for a single blog by id
 exports.deleteABlogById = async (req, res) => {
     try {
         const targetId = req.params.id; 
